@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,700&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline:none;
+    border: none;
+    background-color: #403e3e;
+    color: rgba(224, 220, 0, 0.704);
+}
+
+*::-webkit-scrollbar{
+    width:5px;
+    background:transparent;
+}
+*::-webkit-scrollbar-thumb{
+    background:#777777;
+    border-radius:10px;
+}
+.container{
+    width: 100%;
+    display:flex;
+    padding:20px;
+}
+
+.wrapper{
+    margin:auto;
+    width:550px;
+    padding:1.5rem;
+    border-radius:10px;
+    margin-top: 40px;
+}
+.input_field{
+    width:100%;
+    margin-bottom:20px;
+}
+
+.input_field label{
+    display:block;
+    margin-bottom:10px;
+    font-size: 20px;
+}
+
+.input_field :is(select,textarea), textarea, .form-group > label{
+    width:100%;
+    border:2px solid rgba(224, 220, 0, 0.704);
+    border-radius:10px;
+    font-size:18px;
+    padding:15px 20px;
+    resize: none;
+}
+
+.input_field textarea{
+    resize:none;
+    height:200px;
+}
+
+ .input_field_row{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.input_field_row .input_col{
+    flex:1;
+}
+
+.input_col input[type="range"]{
+    width:70%;
+    height:10px;
+}
+
+.input_col span{
+    margin-left:10px;
+    font-size:18px;
+}
+
+.input_col button{
+    all:unset;
+    width:100%;
+    height:60px;
+    font-size:1.4em;
+    cursor:pointer;
+    background: #242222;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* --------------------- LINKS ------------------------ */
+  
+  a {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+  }
+  
+  
+  /*======================================================
+                            Navbar
+    ======================================================*/
+  #navbar {
+    color: rgb(209, 188, 0);
+    position: fixed;
+    top: 0;
+    height: 60px;
+    line-height: 60px;
+    width: 100vw;
+    z-index: 10;
+    opacity: 0.8;
+  }
+
+#navbar, #menu, .nav-wrapper ul, li, a {
+    background-color: #000 !important;
+}
+
+  .nav-wrapper {
+    margin: auto;
+    text-align: center;
+    width: 70%;
+    background-color: #000;
+  } @media(max-width: 768px) {
+      .nav-wrapper {
+        width: 90%;
+      }
+    } @media(max-width: 638px) {
+        .nav-wrapper {
+          width: 100%;
+        }
+      } 
+  
+  
+  .logo {
+    float: left;
+    margin-left: 28px;
+    font-size: 1.5em;
+    height: 60px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  } @media(max-width: 768px) {
+
+    }
+  
+  #navbar ul {
+    display: inline-block;
+    list-style: none;
+    /* margin-right: 14px; */
+    margin-top: -2px;
+    text-align: right;
+    transition: transform 0.5s ease-out;
+    -webkit-transition: transform 0.5s ease-out;
+  } @media(max-width: 640px) {
+      #navbar ul {
+        display: none;
+      }
+    } @media(orientation: landscape) {
+        #navbar ul {
+          display: inline-block;
+        }
+      }
+  
+  #navbar li {
+    display: inline-block;
+  }
+  
+  #navbar li a {
+    color: rgba(251, 255, 0, 0.783);
+    display: block;
+    font-size: 0.7em;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 0 20px;
+    padding: 0 4px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+  }
+  
+  #navbar li a:hover {
+    /* border-bottom: 1px solid rgb(28, 121, 184); */
+    color: rgb(246, 255, 0);
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+  }
+  
+  /* Animated Bottom Line */
+  #navbar li a:before, #navbar li a:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -1px;
+    background: rgb(255, 255, 255);
+  }
+  
+  #navbar li a:before {
+    left: 0;
+    transition: 0.5s;
+  }
+  
+  #navbar li a:after {
+    background: rgb(255, 162, 0);
+    right: 0;
+    /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
+  }
+  
+  #navbar li a:hover:before {
+    background: rgb(255, 221, 0);
+    width: 100%;
+    transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+  }
+  
+  #navbar li a:hover:after {
+    background: transparent;
+    width: 100%;
+    /* transition: 0s; */
+  }
+  
+  /*======================================================
+                      Responsive Design
+    ======================================================*/
+  @media(max-width: 640px) {
+    .menuIcon {
+      cursor: pointer;
+      display: block;
+      position: fixed;
+      right: 15px;
+      top: 20px;
+      height: 23px;
+      width: 27px;
+      z-index: 12;
+    }
+  
+    /* Icon Bars */
+    .icon-bars {
+      position: absolute;
+      left: 15%;
+      top: 45%;
+      height: 2px;
+      width: 20px;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    } 
+  
+    .icon-bars::before {
+      background: rgb(209, 188, 0);
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -8px;
+      height: 2px;
+      width: 20px;
+  /*     -webkit-transition: top 0.2s ease 0.3s;
+      transition: top 0.2s ease 0.3s; */
+      -webkit-transition: 0.3s width 0.4s;
+      transition: 0.3s width 0.4s;
+    }
+  
+    .icon-bars::after {
+      margin-top: 0px;
+      background: rgb(209, 188, 0);
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      height: 2px;
+      width: 20px;
+  /*     -webkit-transition: top 0.2s ease 0.3s;
+      transition: top 0.2s ease 0.3s; */
+      -webkit-transition: 0.3s width 0.4s;
+      transition: 0.3s width 0.4s;
+    }
+  
+    .typewriter h1 {
+      font-size: 9.2px;
+    }
+
+    textarea {
+      resize: none;
+      width: 100%;
+    }
+
+    #play, #resume, #pause, #reset {
+      display: inline-block;
+      font-size: 1em ;
+    }
+
+    .selectLanguage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #languageForm {
+      width: 80% !important;
+    }
+
+    /* Bars Shadows */
+    .icon-bars.overlay, .icon-bars {
+      background: rgb(209, 188, 0);
+      width: 20px;
+    }
+  
+    #navbar {
+      height: 0px;
+    }
+  
+    
+  
+    /* Toggle Menu Icon */
+    .menuIcon.toggle .icon-bars {
+      top: 5px;
+      transform: translate3d(0, 5px, 0) rotate(135deg);
+      transition-delay: 0.1s;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+  
+    .menuIcon.toggle .icon-bars::before {
+      top: 0;
+      transition-delay: 0.1s;
+      opacity: 0;
+    }
+  
+    .menuIcon.toggle .icon-bars::after {
+      top: 10px;
+      transform: translate3d(0, -10px, 0) rotate(-270deg);
+      transition-delay: 0.1s;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+  
+    .menuIcon.toggle .icon-bars.overlay {
+      width: 20px;
+      opacity: 0;
+      -webkit-transition: all 0s ease 0s;
+      transition: all 0s ease 0s;
+    }
+  }
+  
+  @media(min-width: 1440px){
+
+    .selectLanguage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+    }
+
+    #languageForm {
+      margin-left: 0px !important;
+    width: 100% !important;
+    }
+  }
+  /*======================================================
+                     Responsive Mobile Menu 
+    ======================================================*/
+  .overlay-menu {
+    background: #403e3e;
+    color: rgb(13, 26, 38);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 15px;
+    transform: translateX(-100%);
+    width: 100vw;
+    height: 100vh;
+    -webkit-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+  }
+  
+  .overlay-menu ul, .overlay-menu li {
+    display: block;
+    position: relative;
+  }
+  
+  .overlay-menu li a {
+    display: block;
+    font-size: 1.8em;
+    letter-spacing: 4px;
+  /*   opacity: 0; */
+    padding: 10px 0;
+    text-align: right;
+    text-transform: uppercase;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+  /*   -webkit-transition: 0.2s opacity 0.2s ease-out;
+    transition: 0.2s opacity 0.2s ease-out; */
+  }
+  
+  .overlay-menu li a:hover,
+  .overlay-menu li a:active {
+    color: rgb(28, 121, 184);
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+  }
+
+/* ---------------------------NAV & ABOUT------------------------------*/
+
+.typewriter h1 {
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3s steps(30, end),
+      blink-caret .5s step-end infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+
+
+.about {
+    margin-top: 15px;
+    padding: 40px;
+}
+
+.about {
+    margin-top: 10px;
+}
+
+/* ================================== MP3 DOWNLOAD ================================== */
+
+.mp3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mp3 > form {
+    width: 100%;
+    border: 2px solid rgba(224, 220, 0, 0.704);
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 15px 20px;
+
+}
+
+
+#languageForm {
+    width: 40%;
+    border: 2px solid rgba(224, 220, 0, 0.704);
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 15px 20px;
+    margin-left: 6.67vw;
+    cursor: pointer;
+}
+
+.form-group > .btn {
+    width: 100%;
+    border: 2px solid rgba(224, 220, 0, 0.704);
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 15px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: rgba(13, 13, 13, 0.764);
+    transition: 0.5s;
+}
+
+#voice {
+    cursor: pointer;
+}
