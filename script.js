@@ -29,7 +29,7 @@ const text = document.getElementById("text"),
       })
 
 
-    //   Let's add all event listeners
+    //  event listeners
 
       volume.addEventListener("input",function(){
         speech.volume = volume.value;
@@ -56,34 +56,10 @@ const text = document.getElementById("text"),
       resumeBtn.addEventListener("click",()=>window.speechSynthesis.resume())
       resetBtn.addEventListener("click",()=>window.speechSynthesis.cancel())
 
-      // NAVBAR
-
-      let menuIcon = document.querySelector('.menuIcon');
-        let nav = document.querySelector('.overlay-menu');
-
-        menuIcon.addEventListener('click', () => {
-            if (nav.style.transform != 'translateX(0%)') {
-                nav.style.transform = 'translateX(0%)';
-                nav.style.transition = 'transform 0.2s ease-out';
-            } else { 
-                nav.style.transform = 'translateX(-100%)';
-                nav.style.transition = 'transform 0.2s ease-out';
-            }
-        });
+      
 
 
-        // Toggle Menu Icon ========================================
-        let toggleIcon = document.querySelector('.menuIcon');
-
-        toggleIcon.addEventListener('click', () => {
-            if (toggleIcon.className != 'menuIcon toggle') {
-                toggleIcon.className += ' toggle';
-            } else {
-                toggleIcon.className = 'menuIcon';
-            }
-        });
-
-        // Navbar navigate ===============
+        // Navbar navigate 
         
         function scrollToTop(){
           window.scrollTo({
@@ -91,3 +67,53 @@ const text = document.getElementById("text"),
             behavior: 'smooth'
         });
         };
+
+        window.onscroll = function() {
+          scrollFunction()
+      };
+  
+      function scrollFunction() {
+          if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+              document.getElementById("about").style.display = "block";
+          } else {
+              document.getElementById("about").style.display = "none";
+          }
+      }
+
+  
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+
+
+      // Dark & light theme toggle
+
+      const buttonAdd = document.querySelector('.add');
+
+
+const buttonToggle = document.querySelector('.toggle');
+buttonToggle.addEventListener('click', toggleClass);
+
+function removeClass(){
+  const element = document.querySelector('body');
+  element.classList.remove('body');
+}
+
+function toggleClass(){
+  const element = document.querySelector('body');
+  element.classList.toggle('new-class');
+}
+
+
+// Change between "Dark & Light theme"
+
+function toggleTheme() {
+  var x = document.getElementById("darkToggle");
+  if (x.innerHTML === "CHANGE TO LIGHT THEME") {
+    x.innerHTML = "CHANGE TO DARK THEME";
+  } else {
+    x.innerHTML = "CHANGE TO LIGHT THEME";
+  }
+}

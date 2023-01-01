@@ -13,10 +13,11 @@
     <div class="nav-wrapper">
       <!-- Navbar Links -->
       <ul id="menu" class="menu">
-        <li><a href="#about">About</a></li>
+        <li><a href="#about" onclick="topFunction()">About</a></li>
         <li><a href="#speech" >Text to Speech</a></li>
         <li><a href="#file" >Text to File</a></li>
       </ul>
+      <li><button class="toggle" id="darkToggle" onclick="toggleTheme()">CHANGE TO LIGHT THEME</button></li>
     </div>
   </nav>
   
@@ -26,10 +27,9 @@
   
 
 <body>
-<br><br><br><br>
 
 <div class="typewriter">
-    <h1>Easily convert your text into professional speech for free.</h1>
+    <h1 class="aboutH1">Easily convert your text into professional speech for free.</h1>
   </div>
 
     <section class="about">
@@ -111,17 +111,17 @@
                 <!--===================================  MP3 DOWNLOAD ===================================-->
                 <section id="file">
                 <div class="typewriter">
-                    <h1>Convert your text to an MP3 file</h1>
+                    <h1 id="mp3H1">Convert your text to an MP3 file</h1>
                   </div>
                 
                 <div class="container">
-                    <div class="wrapper">
+                    <div class="wrapper" id="downloadFeature">
                 <form action="https://freemediatools.com/texttospeech" method="post">
                 <div class="form-group">
                      <textarea placeholder="Write your text to download" id="textarea" class="form-control" name="text" id="" cols="30" rows="10"></textarea>
                 </div>
                 <div>
-                    <label class="selectLanguage" for="format">Select Language of Voice:</label>
+                    <label class="selectLanguage voice-dark" for="format">Select Language of Voice:</label>
                     <select class="form-control" name="language" id="languageForm">
                         <option value="af" selected="">Afrikaans</option>
                         <option value="sq">Albanian</option>
@@ -177,7 +177,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <button class="btn btn-block btn-danger">
+                    <button class="btn btn-block btn-danger" id="downloadButton">
                         Download Audio File
                     </button>
             </form>
